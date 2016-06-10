@@ -29,6 +29,12 @@ Feel free to create a PR to this repository
 
 3. [Ruby coding style guide](https://github.com/bbatsov/ruby-style-guide)
 
+## React 
+
+This is an excellent video introducting React with Rails 
+
+[React on Rails conf](https://www.youtube.com/watch?v=kTSsZrub5iE)
+
 # Tools 
 
 ## Git
