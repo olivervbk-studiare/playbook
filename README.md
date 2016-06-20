@@ -1,8 +1,10 @@
-Feel free to create a PR to this repository 
+Feel free to create a PR to this repository
 
-# Code 
+# [Setting up environment on Mac](SetupMac.md)
 
-## Markdown 
+# Code
+
+## Markdown
 
 [CheatSheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
@@ -28,11 +30,11 @@ Feel free to create a PR to this repository
 
 OBS. The download link seems broken. Use https://github.com/tibbon/ruby-koans instead
 
-# Tools 
+# Tools
 
 ## Git
 
-### Git setup 
+### Git setup
 
 ```bash
 git config --global alias.co checkout
@@ -43,9 +45,7 @@ git config --global alias.unstage "reset HEAD"
 git config --global alias.lg `log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`
 ```
 
-### Autocomplete with Git 
+### Autocomplete with Git
 
-autocomplete: completion.bash  in 
+autocomplete: completion.bash  in
 https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
-
-
