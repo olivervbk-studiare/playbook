@@ -1,6 +1,5 @@
 # Setting up environment on Mac
 
-
 1. Install Xcode from the App Store
 
 2. Once installed, go to Preferences -> Downloads -> Install Command Line Tools
@@ -25,25 +24,28 @@ sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2
 \curl -L https://get.rvm.io | bash -s stable --ruby
 ```
 
-TO START RVM:
+###### TO START RVM:
+
+```bash
 source /Users/felipeam/.rvm/scripts/rvm
+```
 
 Run the following to install current version of ruby:
 
 ```bash
-rvm install 2.0.0
+  rvm install 2.0.0
 rvm use 2.0.0
 rvm --default 2.0.0
 ```
 
 5. Install rails
 
-```bash
-gem install rails
-```
+  ```bash
+    gem install rails
+    ```
 
-  ( alternatively you could try  http://railsinstaller.org/en#osx - not recommended)
-  (If you are receiving an error changing group of /opt/rix to rvm just restart the pc.
+( alternatively you could try  http://railsinstaller.org/en#osx - not recommended)
+(If you are receiving an error changing group of /opt/rix to rvm just restart the pc.
 
 6. Install RubyMine IDE (there is a free trial for 30 days)
  https://www.jetbrains.com/ruby/download/index.html
@@ -54,50 +56,50 @@ gem install rails
 
 9. (optional) Install pry. Pry is a better repl than irb
 
-```bash
- $ sudo gem install pry   
-```
+  ```bash
+   $ sudo gem install pry   
+  ```
 
 10. Install postgresql from home-brew
 
   * install:
 
-  ```bash
-	brew install postgresql
-  ```
+    ```bash
+  	brew install postgresql
+    ```
 
   * init db (maybe)
 
-  ```bash
-  initdb /usr/local/var/postgres -E utf8
-  ```
+    ```bash
+    initdb /usr/local/var/postgres -E utf8
+    ```
 
   * start postgres server ( to test it in ruby mine)
 
-  ```bash
-  postgres -D /usr/local/var/postgres
-  ```
+    ```bash
+    postgres -D /usr/local/var/postgres
+    ```
 
 11. Setup your git environment. CHANGE THE COMMAND LINES BELOW
 
   ###### CONFIG
 
-  ```bash
-    $ git config --global user.name "Your Name Here"
-    $ git config --global user.email "your_email@example.com"
-  ```
+    ```bash
+      $ git config --global user.name "Your Name Here"
+      $ git config --global user.email "your_email@example.com"
+    ```
 
   ###### PASSWORD CACHING
 
-  ```bash
-    $ ssh-keygen -t rsa -C “MY@EMAMAIL.COM”
-  ```
+    ```bash
+      $ ssh-keygen -t rsa -C “MY@EMAMAIL.COM”
+    ```
 
-  now “cat” the file and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add Key”.
+    now “cat” the file and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add Key”.
 
-  ```bash
-    $ ssh -T git@github.com
-  ```
+    ```bash
+      $ ssh -T git@github.com
+    ```
 
   ###### ADD REPOSITORIES (git clone)
 
@@ -116,7 +118,7 @@ gem install rails
     heroku keys:add
   ```
 
-13. In Rubymine, use the rakes :
+13. In Rubymine, use the rakes:
   * db:create
   * db:repopulate
   * db:migrate
@@ -125,24 +127,24 @@ gem install rails
 
 15. You need parallelism!
 
-a. Install Redis:
+  a. Install Redis:
 
-```bash
-brew install redis
-```
+    ```bash
+    brew install redis
+    ```
 
-b. Start Redis:
+  b. Start Redis:
 
-```bash
-redis-server
-```
+    ```bash
+    redis-server
+    ```
 
-c. Install and start Sidekiq:
+  c. Install and start Sidekiq:
 
-```bash
-gem install sidekiq
-bundle exec sidekiq
-```
+    ```bash
+    gem install sidekiq
+    bundle exec sidekiq
+    ```
 
 ###### APPS
 
