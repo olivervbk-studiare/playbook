@@ -2,41 +2,40 @@
 
 1. Install Xcode from the App Store
 
-2. Once installed, go to Preferences -> Downloads -> Install Command Line Tools
+2. Once installed, go to Preferences -> Locations tab, and check if you already have Installed the Command Line Tools component. If not, install it from Apple's developer page or type gcc in a bash terminal to call the Command Line Developer Tools Installer.
 
 3. Install HomeBrew and gcc-42
 
-```bash
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-OR
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
-```
+  ```bash
+  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+  OR
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+  ```
 
-```bash
-brew tap homebrew/dupes
-brew install apple-gcc42
-sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2
-```
+  ```bash
+  brew tap homebrew/dupes
+  brew install apple-gcc42
+  ```
 
 4. Install rvm ( http://rvm.io ) - this will allow you to manage ruby and gem versions. It also installs a gui called Jewelry
 
-```bash
-\curl -L https://get.rvm.io | bash -s stable --ruby
-```
+  ```bash
+  \curl -L https://get.rvm.io | bash -s stable --ruby
+  ```
 
-###### TO START RVM:
+  ###### TO START RVM:
 
-```bash
-source /Users/felipeam/.rvm/scripts/rvm
-```
+    ```bash
+    source /Users/felipeam/.rvm/scripts/rvm
+    ```
 
-Run the following to install current version of ruby:
+  Run the following to install current version of ruby:
 
-```bash
+  ```bash
   rvm install 2.3.0
-rvm use 2.3.0
-rvm --default 2.3.0
-```
+  rvm use 2.3.0
+  rvm --default 2.3.0
+  ```
 
 5. Install rails
 
