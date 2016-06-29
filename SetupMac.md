@@ -33,9 +33,9 @@ source /Users/felipeam/.rvm/scripts/rvm
 Run the following to install current version of ruby:
 
 ```bash
-  rvm install 2.0.0
-rvm use 2.0.0
-rvm --default 2.0.0
+  rvm install 2.3.0
+rvm use 2.3.0
+rvm --default 2.3.0
 ```
 
 5. Install rails
@@ -50,7 +50,7 @@ rvm --default 2.0.0
 6. Install RubyMine IDE (there is a free trial for 30 days)
  https://www.jetbrains.com/ruby/download/index.html
 
-7. Create ( if don't have one ) account at github. (optional) You can also install the github app (https://mac.github.com)
+7. Create ( if you don't have one ) account at github. (optional) You can also install the github app (https://mac.github.com)
 
 8. Case has been installed github, download the repository (click the button Clone in Desktop) - this will open the github app for mac. You should now be able to see the repository in your github app.
 
@@ -65,7 +65,7 @@ rvm --default 2.0.0
   * install:
 
     ```bash
-  	brew install postgresql
+    brew install postgresql
     ```
 
   * init db (maybe)
@@ -94,8 +94,12 @@ rvm --default 2.0.0
     ```bash
       $ ssh-keygen -t rsa -C “MY@EMAMAIL.COM”
     ```
+    After run the command above, leave questions in blank by hitting enter for all of then.
+    You will have created `.ssh/id_rsa` and `.ssh/id_rsa.pub` files. 
 
-    now “cat” the file and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add Key”.
+    Now “cat” the id_rsa.pub file content and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add SSH Key”.
+
+    At last, run the command below.
 
     ```bash
       $ ssh -T git@github.com
