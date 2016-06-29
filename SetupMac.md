@@ -115,11 +115,14 @@
 12. Install heroku toolbelt from https://toolbelt.heroku.com
 
   ```bash
-    configure heroku
     heroku login
     ssh-keygen -t rsa
     heroku keys:add
   ```
+  `ssh-keygen -t rsa` will generate a ssh public key file **id_rsa.pub**.
+  Leave the question hitting enter for all of then, and confirm that you would like to
+  update the id_rsa.pub that already exists because of github configuration.
+
 
 13. In Rubymine, use the rakes:
   * db:create
