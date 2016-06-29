@@ -1,5 +1,7 @@
 Feel free to create a PR to this repository
 
+# [Setting up environment on Mac](SetupMac.md)
+
 # Code
 
 ## Markdown
