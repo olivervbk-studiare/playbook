@@ -93,8 +93,20 @@
     ```bash
       $ ssh-keygen -t rsa -C "MY@EMAMAIL.COM"
     ```
-    After run the command above, leave questions in blank by hitting enter for all of then.
-    You will have created `.ssh/id_rsa` and `.ssh/id_rsa.pub` files. 
+    After run the command above, you will be asked for a key name. You can leave this question in blank, but is recommended that you change this name to avoid conflicts. Put a name (with the right path) like `~/.ssh/id_rsa_git` for example. If you want, leave next questions in blank by hitting enter for all of then.
+    You will have created `.ssh/id_rsa_git` and `.ssh/id_rsa_git.pub` files.
+
+    Use `ssh-add ~/.ssh/id_rsa_git` to add keys, `ssh-add -l` to check saved keys and `ssh-add - D` to delete all not used cached keys.
+
+    Another recommendation is to create a config file to manager multiple git keys. It will be useful for github and heroku. At ~/.ssh/ create a config file like below:
+
+    ```
+    #git rodrigo's mac account
+    Host github.com-activehacker
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_rsa_git
+    ```
 
     Now "cat" the id_rsa.pub file content and copy the text exactly from the first "s" in "ssh-rsa" to the last character in your email and paste it in github.com/settings/ssh, click "Add SSH Key" in the top right, enter in a Title and then paste into the Key field. Hit "Add SSH Key".
 
