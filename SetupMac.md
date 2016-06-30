@@ -91,12 +91,12 @@
   ###### PASSWORD CACHING
 
     ```bash
-      $ ssh-keygen -t rsa -C “MY@EMAMAIL.COM”
+      $ ssh-keygen -t rsa -C "MY@EMAMAIL.COM"
     ```
     After run the command above, leave questions in blank by hitting enter for all of then.
     You will have created `.ssh/id_rsa` and `.ssh/id_rsa.pub` files. 
 
-    Now “cat” the id_rsa.pub file content and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add SSH Key”.
+    Now "cat" the id_rsa.pub file content and copy the text exactly from the first "s" in "ssh-rsa" to the last character in your email and paste it in github.com/settings/ssh, click "Add SSH Key" in the top right, enter in a Title and then paste into the Key field. Hit "Add SSH Key".
 
     At last, run the command below.
 
