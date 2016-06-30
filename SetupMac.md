@@ -110,7 +110,7 @@
 
     Now "cat" the id_rsa.pub file content and copy the text exactly from the first "s" in "ssh-rsa" to the last character in your email and paste it in github.com/settings/ssh, click "Add SSH Key" in the top right, enter in a Title and then paste into the Key field. Hit "Add SSH Key".
 
-    At last, run the command below.
+    At last, run the command below to check connection.
 
     ```bash
       $ ssh -T git@github.com
@@ -129,12 +129,27 @@
   ```bash
     heroku login
     ssh-keygen -t rsa
-    heroku keys:add
+    heroku keys:add ~/.ssh/key_filename.pub
   ```
-  `ssh-keygen -t rsa` will generate a ssh public key file **id_rsa.pub**.
-  Leave the question hitting enter for all of then, and confirm that you would like to
-  update the id_rsa.pub that already exists because of github configuration.
+  `ssh-keygen -t rsa` will generate a ssh public key file **id_rsa.pub**. As we did in github configuration, create a ssh key file like `~/.ssh/id_rsa_heroku`.
+  You can check existing keys and remove old ones using the commands below:
 
+  ```bash
+    heroku keys
+    heroku keys:remove rodrigoprates@Rodrigos-Mac-mini.local
+  ```
+
+  Finally, add some lines in config file, as we did in github configuration.
+
+  ```
+  #heroku rodrigo's mac account
+  Host heroku.com
+    HostName heroku.com
+    IdentityFile ~/.ssh/id_rsa_heroku
+    IdentitiesOnly yes
+  ```
+
+  Validate with `ssh -v git@heroku.com`.
 
 13. In Rubymine, use the rakes:
   * db:create
