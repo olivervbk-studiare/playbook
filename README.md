@@ -60,6 +60,9 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.unstage "reset HEAD"
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+git config --global alias.brs "for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'"
+
+
 ```
 
 ### Autocomplete with Git
