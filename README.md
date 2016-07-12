@@ -47,6 +47,12 @@ This is an excellent video introducting React with Rails
 
 [React on Rails conf](https://www.youtube.com/watch?v=kTSsZrub5iE)
 
+## WEBPACK
+
+This is our Compilation of knowledge about webpack
+
+[Webpack Introduction](https://github.com/rodrigolpStudiare/WebPack_Studiare) 
+
 # Tools
 
 ## Git
