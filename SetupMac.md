@@ -151,14 +151,21 @@
 
   Validate with `ssh -v git@heroku.com`.
 
-13. In Rubymine, use the rakes:
+13. Choose your Editor:
+  * [RubyMine](https://www.jetbrains.com/ruby/)
+  * [Sublime Text](https://www.sublimetext.com/3)
+  * [others](http://stackoverflow.com/questions/826164/a-definitive-list-of-ides-for-ruby-on-rails)  
+
+14. Restore the database:
+  * Save the file (.dump) in a folder like: `yourUser/dev/kroton_engenharias_dev_db/dumps/a182.dump`
+  * Then run this command: `pg_restore --verbose --clean --no-acl --no-owner -h localhost -U felipeam -d kroton_engenharias_dev_db dumps/a182.dump`, where you must change `felipeam` by your userName.
+
+15. In Rubymine, use the rakes:
   * db:create
   * db:repopulate
   * db:migrate
 
-14. Develop
-
-15. You need parallelism!
+16. You need parallelism!
 
   a. Install Redis:
 
@@ -178,6 +185,25 @@
     gem install sidekiq
     bundle exec sidekiq
     ```
+
+17. Develop
+    * Before development you have to:
+      * Start postgres: `postgres -D /usr/local/var/postgres`
+      * Start Redis: `redis-server`
+      * Start Sidekiq: `sidekiq` or `bundle exec sidekiq`
+      * Download the code from repository
+      * Create a new branch with `git checkout -b branchName`. We adopt the following created rule for the branchName: `YYMMDD_nameInitials_branchDescription`. For example: 160718_RP_PLAYBOOK_UPDATE 
+      * Update your branch code: `git pull origin master`
+      * Update your Gem repo: `bundle install`
+      * Update your npm repo: `npm install`
+      * Run db:migrate: `rake db:migrate` or `ActiveRecord::Migrator.migrate "db/migrate"`
+    * During development you will need to create users for each platform. Bellow you can find some tips:
+      * Use `initialize_from_given_profile` method from User.rb class to initialize a new user based on a profile. For example: From rails console type `User.initialize_from_given_profile(Profile::EB_BASIC_PROFILE, user_name)` to create a **'EB'** user.
+      * You can also duplicate an exist user. For example: From rails console type `user2 = user1.dup()`
+    * After development you have to:
+      * Commit you code
+      * Push your branch
+      * Pull request in github
 
 ###### APPS
 
