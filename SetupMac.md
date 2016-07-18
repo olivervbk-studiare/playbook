@@ -151,14 +151,21 @@
 
   Validate with `ssh -v git@heroku.com`.
 
-13. In Rubymine, use the rakes:
+13. Choose your Editor:
+  * [RubyMine](https://www.jetbrains.com/ruby/)
+  * [Sublime Text](https://www.sublimetext.com/3)
+  * [others](http://stackoverflow.com/questions/826164/a-definitive-list-of-ides-for-ruby-on-rails)  
+
+14. Restore the database:
+  * Save the file (.dump) in a folder like: `yourUser/dev/kroton_engenharias_dev_db/dumps/a182.dump`
+  * Then run this command: `pg_restore --verbose --clean --no-acl --no-owner -h localhost -U felipeam -d kroton_engenharias_dev_db dumps/a182.dump`, where you must change `felipeam` by your userName.
+
+15. In Rubymine, use the rakes:
   * db:create
   * db:repopulate
   * db:migrate
 
-14. Develop
-
-15. You need parallelism!
+16. You need parallelism!
 
   a. Install Redis:
 
@@ -178,6 +185,16 @@
     gem install sidekiq
     bundle exec sidekiq
     ```
+
+17. Develop
+  * Before development you have to:
+    ** Start postgres: `postgres -D /usr/local/var/postgres`
+    ** Start Redis: `redis-server`
+    ** Start Sidekiq: `sidekiq` or `bundle exec sidekiq`
+    ** Update your code: `git pull origin master`
+    ** Update your Gem repo: `bundle install`
+    ** Update your npm repo: `npm install`
+    ** Run db:migrate: `rake db:migrate` or `ActiveRecord::Migrator.migrate "db/migrate"` 
 
 ###### APPS
 
