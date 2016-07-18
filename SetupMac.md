@@ -199,7 +199,7 @@
       * Run db:migrate: `rake db:migrate` or `ActiveRecord::Migrator.migrate "db/migrate"`
     * During development you will need to create users for each platform. Bellow you can find some tips:
       * Use `initialize_from_given_profile` method from User.rb class to initialize a new user based on a profile. For example: From rails console type `User.initialize_from_given_profile(Profile::EB_BASIC_PROFILE, user_name)` to create a **'EB'** user.
-      * You can also duplicate an exist user. For example: From rails console type user2 = user1.dup()`
+      * You can also duplicate an exist user. For example: From rails console type `user2 = user1.dup()`
     * After development you have to:
       * Commit you code
       * Push your branch
