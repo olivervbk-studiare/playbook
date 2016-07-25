@@ -51,7 +51,25 @@ This is an excellent video introducting React with Rails
 
 This is our Compilation of knowledge about webpack
 
-[Webpack Introduction](https://github.com/rodrigolpStudiare/WebPack_Studiare) 
+[Webpack Introduction](https://github.com/rodrigolpStudiare/WebPack_Studiare)
+
+## FactoryGirl
+
+Bellow you can find some information about FactoryGirl for rails, why use for also build a development database and why not.
+
+[factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+
+[Getting Started](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md)
+
+[Data Factories Using FactoryGirl](https://semaphoreci.com/community/tutorials/working-effectively-with-data-factories-using-factorygirl)
+
+[FactoryGirl in Development Environment](http://conceptspace.wikidot.com/blog:factorygirl-in-development-environment)
+
+[factories to build a development database](http://stackoverflow.com/questions/15777731/how-to-use-factorygirl-factories-to-build-a-development-database)
+
+[Factory and Faker for generate seed data](http://stackoverflow.com/questions/25068869/factorygirl-faker-same-data-being-generated-for-every-object-in-db-seed-data)
+
+[FactoryGirl for Seed Data?](https://robots.thoughtbot.com/factory_girl-for-seed-data) 
 
 # Tools
 
