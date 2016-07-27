@@ -151,6 +151,26 @@
 
   Validate with `ssh -v git@heroku.com`.
 
+13. Steps for Heroku Deployment(test environment)
+
+  1. Add remote repository: `git remote add heroku-test git@heroku.com:studiare.git`
+
+  2. Checkout master-test: `git co master-test`
+
+  3. Update from remote: `git pull origin master`
+
+  4. Create your branch: `git co -b 'my_branch'`
+
+  5. Change some code...
+
+  6. Merge your changes with master-test branch: 
+    `git co master-test` and `git merge 'my_branch'`
+
+  7. Push your changes to git: `git push origin master-test`
+  
+  8. Push to Heroku: `git push heroku-test master-test:master`  
+    
+
 13. Choose your Editor:
   * [RubyMine](https://www.jetbrains.com/ruby/)
   * [Sublime Text](https://www.sublimetext.com/3)
