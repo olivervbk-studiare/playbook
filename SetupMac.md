@@ -2,41 +2,40 @@
 
 1. Install Xcode from the App Store
 
-2. Once installed, go to Preferences -> Downloads -> Install Command Line Tools
+2. Once installed, go to Preferences -> Locations tab, and check if you already have Installed the Command Line Tools component. If not, install it from Apple's developer page or type gcc in a bash terminal to call the Command Line Developer Tools Installer.
 
 3. Install HomeBrew and gcc-42
 
-```bash
-ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-OR
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
-```
+  ```bash
+  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+  OR
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+  ```
 
-```bash
-brew tap homebrew/dupes
-brew install apple-gcc42
-sudo ln -s /usr/local/bin/gcc-4.2 /usr/bin/gcc-4.2
-```
+  ```bash
+  brew tap homebrew/dupes
+  brew install apple-gcc42
+  ```
 
 4. Install rvm ( http://rvm.io ) - this will allow you to manage ruby and gem versions. It also installs a gui called Jewelry
 
-```bash
-\curl -L https://get.rvm.io | bash -s stable --ruby
-```
+  ```bash
+  \curl -L https://get.rvm.io | bash -s stable --ruby
+  ```
 
-###### TO START RVM:
+  ###### TO START RVM:
 
-```bash
-source /Users/felipeam/.rvm/scripts/rvm
-```
+    ```bash
+    source /Users/felipeam/.rvm/scripts/rvm
+    ```
 
-Run the following to install current version of ruby:
+  Run the following to install current version of ruby:
 
-```bash
-  rvm install 2.0.0
-rvm use 2.0.0
-rvm --default 2.0.0
-```
+  ```bash
+  rvm install 2.3.0
+  rvm use 2.3.0
+  rvm --default 2.3.0
+  ```
 
 5. Install rails
 
@@ -50,7 +49,7 @@ rvm --default 2.0.0
 6. Install RubyMine IDE (there is a free trial for 30 days)
  https://www.jetbrains.com/ruby/download/index.html
 
-7. Create ( if don't have one ) account at github. (optional) You can also install the github app (https://mac.github.com)
+7. Create ( if you don't have one ) account at github. (optional) You can also install the github app (https://mac.github.com)
 
 8. Case has been installed github, download the repository (click the button Clone in Desktop) - this will open the github app for mac. You should now be able to see the repository in your github app.
 
@@ -65,7 +64,7 @@ rvm --default 2.0.0
   * install:
 
     ```bash
-  	brew install postgresql
+    brew install postgresql
     ```
 
   * init db (maybe)
@@ -92,10 +91,26 @@ rvm --default 2.0.0
   ###### PASSWORD CACHING
 
     ```bash
-      $ ssh-keygen -t rsa -C “MY@EMAMAIL.COM”
+      $ ssh-keygen -t rsa -C "MY@EMAMAIL.COM"
+    ```
+    After run the command above, you will be asked for a key name. You can leave this question in blank, but is recommended that you change this name to avoid conflicts. Put a name (with the right path) like `~/.ssh/id_rsa_git` for example. If you want, leave next questions in blank by hitting enter for all of then.
+    You will have created `.ssh/id_rsa_git` and `.ssh/id_rsa_git.pub` files.
+
+    Use `ssh-add ~/.ssh/id_rsa_git` to add keys, `ssh-add -l` to check saved keys and `ssh-add - D` to delete all not used cached keys.
+
+    Another recommendation is to create a config file to manager multiple git keys. It will be useful for github and heroku. At ~/.ssh/ create a config file like below:
+
+    ```
+    #git rodrigo's mac account
+    Host github.com-activehacker
+      HostName github.com
+      User git
+      IdentityFile ~/.ssh/id_rsa_git
     ```
 
-    now “cat” the file and copy the text exactly from the first “s” in “ssh-rsa” to the last character in your email and paste it in github.com/settings/ssh, click “Add SSH Key” in the top right, enter in a Title and then paste into the Key field. Hit “Add Key”.
+    Now "cat" the id_rsa.pub file content and copy the text exactly from the first "s" in "ssh-rsa" to the last character in your email and paste it in github.com/settings/ssh, click "Add SSH Key" in the top right, enter in a Title and then paste into the Key field. Hit "Add SSH Key".
+
+    At last, run the command below to check connection.
 
     ```bash
       $ ssh -T git@github.com
@@ -112,11 +127,29 @@ rvm --default 2.0.0
 12. Install heroku toolbelt from https://toolbelt.heroku.com
 
   ```bash
-    configure heroku
     heroku login
     ssh-keygen -t rsa
-    heroku keys:add
+    heroku keys:add ~/.ssh/key_filename.pub
   ```
+  `ssh-keygen -t rsa` will generate a ssh public key file **id_rsa.pub**. As we did in github configuration, create a ssh key file like `~/.ssh/id_rsa_heroku`.
+  You can check existing keys and remove old ones using the commands below:
+
+  ```bash
+    heroku keys
+    heroku keys:remove rodrigoprates@Rodrigos-Mac-mini.local
+  ```
+
+  Finally, add some lines in config file, as we did in github configuration.
+
+  ```
+  #heroku rodrigo's mac account
+  Host heroku.com
+    HostName heroku.com
+    IdentityFile ~/.ssh/id_rsa_heroku
+    IdentitiesOnly yes
+  ```
+
+  Validate with `ssh -v git@heroku.com`.
 
 13. In Rubymine, use the rakes:
   * db:create
