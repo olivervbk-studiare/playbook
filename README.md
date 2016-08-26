@@ -13,7 +13,7 @@ Feel free to create a PR to this repository
 
 [RubyTapas](https://www.youtube.com/playlist?list=PLj0t_NS6HQk3OKonthcxgXg4bhsP9KH93) - screencast about ruby
 
-[Destroy all Software](https://www.destroyallsoftware.com/screencasts) - screencast about ruby 
+[Destroy all Software](https://www.destroyallsoftware.com/screencasts) - screencast about ruby
 
 
 
@@ -51,7 +51,7 @@ This is an excellent video introducting React with Rails
 
 This is our Compilation of knowledge about webpack
 
-[Webpack Introduction](https://github.com/rodrigolpStudiare/WebPack_Studiare) 
+[Webpack Introduction](https://github.com/rodrigolpStudiare/WebPack_Studiare)
 
 # Tools
 
@@ -80,3 +80,42 @@ fi
 
 * OU autocomplete: completion.bash  in
 https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks
+
+# Samples:
+
+## Adding overarc to mathquill tinymce
+
+```
+  File equation_editor.html.erb
+```
+
+This is the first file to change. It is responsible for inserting symbols in the formula editor. Change css and javascript on this file
+
+```javascript
+  S.overarc=e(z,"\\overarc","span",'class="non-leaf overarc"')
+```
+
+.mathquill-rendered-math .overarc {
+  border-top: 1px solid black;
+  margin-top: 1px;
+  border-radius: 6px;
+}
+
+** File vendor/assets/javascripts/mathquill/mathquill.min.js
+
+This file is used to insert things from formula editor into tinymce.
+
+le.overarc=e(l,"\\overarc","span",'class="non-leaf overarc"')
+
+
+** File vendor/assets/stylesheets/mathquill/mathquill.css
+
+This file is responsible for style once inserted in the tinymce editor. Even though might seem fine before inserting, wrong configuration on this file might give an error.
+
+.mathquill-rendered-math .overarc {
+  border-top: 1px solid black;
+  margin-top: 1px;
+  border-radius: 6px;
+}
+
+**
