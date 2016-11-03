@@ -32,9 +32,9 @@
   Run the following to install current version of ruby:
 
   ```bash
-  rvm install 2.3.0
-  rvm use 2.3.0
-  rvm --default 2.3.0
+  rvm install 2.3.1
+  rvm use 2.3.1
+  rvm --default 2.3.1
   ```
 
 5. Install rails
